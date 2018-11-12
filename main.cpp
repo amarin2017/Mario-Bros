@@ -26,7 +26,7 @@ int main( int argc, char *argv[] )
 
     SDL_Event windowEvent;
 
-    imageSurface = SDL_LoadBMP( "mario.bmp" );
+    imageSurface = SDL_LoadBMP( "pixil-frame-0.bmp" );
     if( imageSurface == NULL )
     {
         std::cout << "SDL could not load image! SDL Error: " << SDL_GetError( ) << std::endl;
