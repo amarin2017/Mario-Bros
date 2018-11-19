@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1542665481 source:c:\users\adria\desktop\fall_2018\csi\sdl@\main.cpp
+	<iostream>
+	<fstream>
+	"SDL_Plotter.h"
+
+1542653658 c:\users\adria\desktop\fall_2018\csi\sdl@\sdl_plotter.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_mixer.h>
+	<string.h>
+	<iostream>
+	<string>
+	<string.h>
+	<map>
+
