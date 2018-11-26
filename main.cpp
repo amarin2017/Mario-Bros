@@ -8,8 +8,8 @@ using namespace std;
 
 int main(int argc, char ** argv)
 {
-    const int windowHeight = 600;
-    const int windowWidth = 600;
+    const int windowHeight = 436;
+    const int windowWidth = 673;
     //random pixels
     SDL_Plotter g (windowHeight, windowWidth);
 
@@ -81,7 +81,7 @@ int main(int argc, char ** argv)
 
         
         //space for the bricks
-        
+        //top right
         for (int col=100; col < width+300; ++col)
         {
             for (int row = 200; row < width+ 200; ++row)
@@ -91,10 +91,10 @@ int main(int argc, char ** argv)
             
         }
         
-        
+        //top left
         for (int col=500; col < width+600; ++col)
         {
-            for (int row = 200; row < width+ 200; ++row)
+            for (int row = 200; row < width+ 205; ++row)
             {
                 g.plotPixel(col, row, 255, 255, 255);
             }
@@ -102,53 +102,99 @@ int main(int argc, char ** argv)
         }
         
         
-        for (int col=100; col < width+300; ++col)
+//        for (int col=100; col < width+300; ++col)
+//        {
+//            for (int row = 400; row < width+ 400; ++row)
+//            {
+//                g.plotPixel(col, row, 255, 255, 0);
+//            }
+//
+//        }
+        
+        //bottom left
+        for (int col=0; col < width+300; ++col)
         {
-            for (int row = 400; row < width+ 400; ++row)
+            for (int row = 350; row < width + 370; ++row)
             {
                 g.plotPixel(col, row, 255, 255, 255);
             }
             
         }
         
-        
-        for (int col=80; col < width+150; ++col)
+        //bottom right
+        for (int col=450; col < width+673; ++col)
         {
-            for (int row = 400; row < width+ 400; ++row)
+            for (int row = 350; row < width + 370; ++row)
             {
                 g.plotPixel(col, row, 255, 255, 255);
             }
             
         }
         
-                //limit to bottom
+        
+        
+        
+        
+        
+        //limit to bottom left
         if (rectPosY == 370 && rectPosX < 305)
         {
             rectPosY = 436;
         }
         
+        //limit to bottom right
+        if (rectPosY == 370 && rectPosX >450 && rectPosX < 673)
+        {
+            rectPosY = 436;
+        }
+        
+        
+        
+        
+        
+        
     
-        //bottom one
+        //bottom left
         if (rectPosY == 350 && rectPosX < 300)
         {
                 rectPosY = 330;
         }
+        //bottom right
+        if (rectPosY == 350 && rectPosX >450 && rectPosX < 673)
+        {
+            rectPosY = 330;
+        }
+        
+        
+        
         
         //top right
         if (rectPosY == 200 && rectPosX < 600 && rectPosX > 500)
         {
                 rectPosY = 180;
         }
+        if (rectPosY == 210 && rectPosX <600 && rectPosX > 500)
+        {
+            rectPosY = 330;
+        }
        
+        
+        
+        
+        
         //top left
         if (rectPosY == 200 && rectPosX > 100 && rectPosX < 300)
         {
             rectPosY = 180;
         }
         
+        if (rectPosY == 210 && rectPosX > 100 && rectPosX < 300 )
+        {
+            rectPosY = 330;
+        }
         
         
-        
+    
         
 
         if(g.kbhit()){
