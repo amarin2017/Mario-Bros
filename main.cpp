@@ -121,6 +121,32 @@ int main(int argc, char ** argv)
             
         }
         
+                //limit to bottom
+        if (rectPosY == 370 && rectPosX < 305)
+        {
+            rectPosY = 436;
+        }
+        
+    
+        //bottom one
+        if (rectPosY == 350 && rectPosX < 300)
+        {
+                rectPosY = 330;
+        }
+        
+        //top right
+        if (rectPosY == 200 && rectPosX < 600 && rectPosX > 500)
+        {
+                rectPosY = 180;
+        }
+       
+        //top left
+        if (rectPosY == 200 && rectPosX > 100 && rectPosX < 300)
+        {
+            rectPosY = 180;
+        }
+        
+        
         
         
         
