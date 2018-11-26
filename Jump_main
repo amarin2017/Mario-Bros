@@ -16,37 +16,34 @@ int main(int argc, char ** argv)
     int width=10;
     int height=10;
 
-    double jump_time = 7.5;
+    double jump_time = 0;
 
 
     while (!g.getQuit()) //loop goes forever until user puts exit
     {
+        double horizontal = 0;
 
         if(g.kbhit()){
             g.getKey();
         }
 
         //grab input
-        if (g.getKey() == UP_ARROW)
-        {
+        if (g.getKey() == UP_ARROW) {
 
-            if (jump_time > 0) {
-                rectPosY = max(rectPosY - 2, 0);
-                jump_time -= 0.125;
-            }
-
+            jump_time = 12.5;
         }
+
         else if (g.getKey()== DOWN_ARROW)
         {
             rectPosY = min (rectPosY +2, windowHeight - height);
         }
         else if(g.getKey() == LEFT_ARROW)
         {
-            rectPosX = max (rectPosX-2,0);
+            horizontal = -1;
         }
         else if (g.getKey() == RIGHT_ARROW)
         {
-            rectPosX = min (rectPosX+2, windowWidth-width);
+            horizontal = 1;
         }
 
 
@@ -76,7 +73,22 @@ int main(int argc, char ** argv)
             rectPosY = min(rectPosY + 1, windowHeight-height);
         }
 
+        if(jump_time > 0)
+        {
+            rectPosY = max(rectPosY - 2, 0);
+            jump_time -= 0.125;
+        }
+
+        if (horizontal == -1)
+        {
+            rectPosX = max (rectPosX - 1,0);
+        }
+        else if (horizontal == 1)
+        {
+            rectPosX = min (rectPosX + 1, windowWidth-width);
+        }
 
         g.update();
+
     }
 }
