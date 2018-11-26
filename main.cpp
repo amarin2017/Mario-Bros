@@ -1,7 +1,9 @@
 #include <iostream>
 #include "player.h"
+#include "Collision.h"
 #include "SDL_Plotter.h"
-
+#include "Collision.h"
+#include "Map.h"
 using namespace std;
 
 int main(int argc, char ** argv)
@@ -12,11 +14,11 @@ int main(int argc, char ** argv)
     SDL_Plotter g (windowHeight, windowWidth);
 
     int rectPosX=300;
-    int rectPosY=300;
+    int rectPosY=600;
     int width=10;
     int height=10;
-
-
+    int gravity =0;
+    int jump =0;
     while (!g.getQuit()) //loop goes forever until user puts exit
     {
      //grab input
@@ -31,13 +33,21 @@ int main(int argc, char ** argv)
         }
         else if(g.getKey() == LEFT_ARROW)
         {
-            rectPosX = max (rectPosX-2,0);
+            rectPosX -= 1; //= max (rectPosX-2,0);
         }
         else if (g.getKey() == RIGHT_ARROW)
         {
-            rectPosX = min (rectPosX+2, windowWidth-width);
+            rectPosX +=1; //= min (rectPosX+2, windowWidth-width);
         }
 
+//        if (rectPosX <0)
+//        {
+//            rectPosX =0;
+//        }
+//        if (rectPosY < 0)
+//        {
+//            rectPosY =0;
+//        }
 
 
         //draw loop
@@ -59,19 +69,66 @@ int main(int argc, char ** argv)
                 g.plotPixel(col, row, 250, 32, 5);
             }
         }
-        
-        if (g.getKey() != UP_ARROW || rectPosY != windowHeight)
+
+
+        //this sorta makes the block to jump??
+        if (g.getKey() != UP_ARROW || rectPosY == windowHeight)
         {
-            rectPosY = min(rectPosY + 2, windowHeight-height);
+                rectPosY = min (rectPosY +2, windowHeight - height);
+
         }
+
+
+        
+        //space for the bricks
+        
+        for (int col=100; col < width+300; ++col)
+        {
+            for (int row = 200; row < width+ 200; ++row)
+            {
+                g.plotPixel(col, row, 255, 255, 255);
+            }
+            
+        }
+        
+        
+        for (int col=500; col < width+600; ++col)
+        {
+            for (int row = 200; row < width+ 200; ++row)
+            {
+                g.plotPixel(col, row, 255, 255, 255);
+            }
+            
+        }
+        
+        
+        for (int col=100; col < width+300; ++col)
+        {
+            for (int row = 400; row < width+ 400; ++row)
+            {
+                g.plotPixel(col, row, 255, 255, 255);
+            }
+            
+        }
+        
+        
+        for (int col=80; col < width+150; ++col)
+        {
+            for (int row = 400; row < width+ 400; ++row)
+            {
+                g.plotPixel(col, row, 255, 255, 255);
+            }
+            
+        }
+        
+        
+        
+        
 
         if(g.kbhit()){
             g.getKey();
         }
-
-
-
         g.update();
+
     }
 }
-
