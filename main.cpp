@@ -23,17 +23,17 @@ int main(int argc, char ** argv)
     while (!g.getQuit()) //loop goes forever until user puts exit
     {
         double horizontal = 0;
-        
+
         if(g.kbhit()){
             g.getKey();
         }
-        
+
         //grab input
         if (g.getKey() == UP_ARROW) {
-            
-            jump_time = 12.5;
+
+            jump_time = 10.5;
         }
-        
+
         else if (g.getKey()== DOWN_ARROW)
         {
             rectPosY = min (rectPosY +2, windowHeight - height);
@@ -46,11 +46,11 @@ int main(int argc, char ** argv)
         {
             horizontal = 1;
         }
-        
-        
-        
+
+
+
         //draw loop
-        
+
         //reset background color
         for (int col = 0; col < windowWidth; col++)
         {
@@ -59,7 +59,7 @@ int main(int argc, char ** argv)
                 g.plotPixel(col, row, 0, 0, 0);
             }
         }
-        
+
         //draw rectangle
         for (int col = rectPosX; col < width +rectPosX; col++)
         {
@@ -68,19 +68,19 @@ int main(int argc, char ** argv)
                 g.plotPixel(col, row, 250, 32, 5);
             }
         }
-        
+
         //////with updated jumps/////
         if (g.getKey() != UP_ARROW || rectPosY != windowHeight)
         {
             rectPosY = min(rectPosY + 1, windowHeight-height);
         }
-        
+
         if(jump_time > 0 && g.getKey() != UP_ARROW)
         {
             rectPosY = max(rectPosY - 2, 0);
             jump_time -= 0.125;
         }
-        
+
         if (horizontal == -1)
         {
             rectPosX = max (rectPosX - 1,0);
@@ -89,10 +89,11 @@ int main(int argc, char ** argv)
         {
             rectPosX = min (rectPosX + 1, windowWidth-width);
         }
-        
+
         g.update();
-        
-        
+
+  
+
         
         
         
@@ -226,12 +227,12 @@ int main(int argc, char ** argv)
        
         
         //middle (2nd row)
-        if (rectPosY == 220 && rectPosX <= 473 && rectPosX >=200)
+        if (rectPosY == 220 && rectPosX >= 200 && rectPosX <=473)
         {
             rectPosY = 219;
         }
         //limit middle(2nd row)
-        if (rectPosY == 250 && rectPosX <= 473 && rectPosX >= 500)
+        if (rectPosY == 250 && rectPosX >= 200 && rectPosX <= 473)
         {
             rectPosY = 339;
         }
@@ -284,4 +285,3 @@ int main(int argc, char ** argv)
     }
 
 }
-
