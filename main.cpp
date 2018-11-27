@@ -214,17 +214,18 @@ int main(int argc, char ** argv)
         
         
         
-        //top right (2nd row)
-        if (rectPosY == 220 && rectPosX <= 673 && rectPosX >= 563)
+          //top right (2nd row)
+        if (rectPosY == 220 && rectPosX <= 673 && rectPosX >= 593)
         {
                 rectPosY = 219;
         }
         //limit to top right (2nd row)
-        if (rectPosY == 250 && rectPosX <= 673 && rectPosX >= 563)
+        if (rectPosY == 250 && rectPosX <= 673 && rectPosX >= 593)
         {
             rectPosY = 339;
         }
        
+        
         
         //middle (2nd row)
         if (rectPosY == 220 && rectPosX >= 200 && rectPosX <=473)
