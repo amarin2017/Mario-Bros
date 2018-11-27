@@ -232,7 +232,7 @@ int main(int argc, char ** argv)
         //limit to top left (2nd row)
         if (rectPosY == 250 && rectPosX > 100 && rectPosX < 430 )
         {
-            rectPosY = 330;
+            rectPosY = 339;
         }
         
         
