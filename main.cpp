@@ -189,7 +189,7 @@ int main(int argc, char ** argv)
         }
         
         //limit to bottom right
-        if (rectPosY == 360 && rectPosX >= 3730 && rectPosX <= 673)
+        if (rectPosY == 360 && rectPosX >= 373 && rectPosX <= 673)
         {
             rectPosY = 436;
         }
@@ -257,7 +257,7 @@ int main(int argc, char ** argv)
             rectPosY = 109;
         }
         //limit to top left (1st row)
-        if (rectPosY == 120 && rectPosX > 0 && rectPosX <= 300 )
+        if (rectPosY == 120 && rectPosX >= 0 && rectPosX <= 300 )
         {
             rectPosY = 219;
         }
