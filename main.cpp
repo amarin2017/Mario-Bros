@@ -4,6 +4,7 @@
 #include "SDL_Plotter.h"
 #include "Collision.h"
 #include "Map.h"
+#include <fstream>
 using namespace std;
 
 int main(int argc, char ** argv)
@@ -92,11 +93,45 @@ int main(int argc, char ** argv)
         g.update();
         
     
+        ifstream in;
+        in.open("mario.txt");
+        
+
 
         
+        
+        
+        
+        
         //space for the bricks
-        //top left
-        for (int col=100; col < width+300; ++col)
+        
+        //1st row left
+        for (int col=0; col < width+330; ++col)
+        {
+            for (int row = 120; row < width+ 130; ++row)
+            {
+                g.plotPixel(col, row, 139, 69, 13);
+            }
+            
+        }
+        
+        for (int col=400; col < width+673; ++col)
+        {
+            for (int row = 120; row < width+ 130; ++row)
+            {
+                g.plotPixel(col, row, 139, 69, 13);
+            }
+            
+        }
+        
+        
+        
+        ////////////////////////////////////////////////////
+        
+        
+        
+        //top left (2nd row)
+        for (int col=100; col < width+430; ++col)
         {
             for (int row = 230; row < width+ 240; ++row)
             {
@@ -105,7 +140,7 @@ int main(int argc, char ** argv)
             
         }
         
-        //top right
+        //top right (2nd row)
         for (int col=500; col < width+600; ++col)
         {
             for (int row = 230; row < width+ 240; ++row)
@@ -120,7 +155,7 @@ int main(int argc, char ** argv)
         //bottom left
         for (int col=0; col < width+300; ++col)
         {
-            for (int row = 350; row < width + 370; ++row)
+            for (int row = 350; row < width + 360; ++row)
             {
                 g.plotPixel(col, row, 139, 69, 13);
             }
@@ -130,7 +165,7 @@ int main(int argc, char ** argv)
         //bottom right
         for (int col=450; col < width+673; ++col)
         {
-            for (int row = 350; row < width + 370; ++row)
+            for (int row = 350; row < width + 360; ++row)
             {
                 g.plotPixel(col, row, 139, 69, 13);
             }
@@ -143,13 +178,13 @@ int main(int argc, char ** argv)
         
         
         //limit to bottom left
-        if (rectPosY == 370 && rectPosX < 305)
+        if (rectPosY == 360 && rectPosX <= 305)
         {
             rectPosY = 436;
         }
         
         //limit to bottom right
-        if (rectPosY == 370 && rectPosX >450 && rectPosX < 673)
+        if (rectPosY == 360 && rectPosX >450 && rectPosX < 673)
         {
             rectPosY = 436;
         }
@@ -174,32 +209,56 @@ int main(int argc, char ** argv)
         
         
         
-        //top right
+        //top right (2nd row)
         if (rectPosY == 220 && rectPosX < 600 && rectPosX > 495)
         {
                 rectPosY = 219;
         }
-        //limit to top right
+        //limit to top right (2nd row)
         if (rectPosY == 250 && rectPosX <600 && rectPosX > 500)
         {
-            rectPosY = 330;
+            rectPosY = 339;
         }
        
         
         
         
         
-        //top left
-        if (rectPosY == 220 && rectPosX > 100 && rectPosX < 300)
+        //top left (2nd row)
+        if (rectPosY == 220 && rectPosX > 100 && rectPosX < 430)
         {
             rectPosY = 219;
         }
-        //limit to top left
-        if (rectPosY == 250 && rectPosX > 100 && rectPosX < 300 )
+        //limit to top left (2nd row)
+        if (rectPosY == 250 && rectPosX > 100 && rectPosX < 430 )
         {
             rectPosY = 330;
         }
         
+        
+        
+        //top left (1st row)
+        if (rectPosY == 110 && rectPosX > 0 && rectPosX < 330)
+        {
+            rectPosY = 109;
+        }
+        //limit to top left (1st row)
+        if (rectPosY == 120 && rectPosX > 0 && rectPosX < 330 )
+        {
+            rectPosY = 219;
+        }
+        
+        
+        //top right (1st row)
+        if (rectPosY == 110 && rectPosX > 400 && rectPosX < 673)
+        {
+            rectPosY = 109;
+        }
+        //limit to top right (1st row)
+        if (rectPosY == 120 && rectPosX > 400 && rectPosX < 673)
+        {
+            rectPosY = 219;
+        }
         
     
     
