@@ -95,27 +95,27 @@ int main(int argc, char ** argv)
 
         
         //space for the bricks
-        //top right
+        //top left
         for (int col=100; col < width+300; ++col)
         {
-            for (int row = 200; row < width+ 200; ++row)
+            for (int row = 230; row < width+ 240; ++row)
             {
                 g.plotPixel(col, row, 139, 69, 13);
             }
             
         }
         
-        //top left
+        //top right
         for (int col=500; col < width+600; ++col)
         {
-            for (int row = 200; row < width+ 205; ++row)
+            for (int row = 230; row < width+ 240; ++row)
             {
                 g.plotPixel(col, row, 139, 69, 13);
             }
             
         }
         
-        
+        ///////////////////////////////////////////////////////
         
         //bottom left
         for (int col=0; col < width+300; ++col)
@@ -161,26 +161,26 @@ int main(int argc, char ** argv)
         
     
         //bottom left
-        if (rectPosY == 350 && rectPosX < 300)
+        if (rectPosY == 340 && rectPosX < 300)
         {
-                rectPosY = 330;
+                rectPosY = 339;
         }
         //bottom right
-        if (rectPosY == 350 && rectPosX >450 && rectPosX < 673)
+        if (rectPosY == 340 && rectPosX >450 && rectPosX < 673)
         {
-            rectPosY = 330;
+            rectPosY = 339;
         }
         
         
         
         
         //top right
-        if (rectPosY == 200 && rectPosX < 600 && rectPosX > 495)
+        if (rectPosY == 220 && rectPosX < 600 && rectPosX > 495)
         {
-                rectPosY = 180;
+                rectPosY = 219;
         }
         //limit to top right
-        if (rectPosY == 210 && rectPosX <600 && rectPosX > 500)
+        if (rectPosY == 250 && rectPosX <600 && rectPosX > 500)
         {
             rectPosY = 330;
         }
@@ -190,12 +190,12 @@ int main(int argc, char ** argv)
         
         
         //top left
-        if (rectPosY == 200 && rectPosX > 100 && rectPosX < 300)
+        if (rectPosY == 220 && rectPosX > 100 && rectPosX < 300)
         {
-            rectPosY = 180;
+            rectPosY = 219;
         }
         //limit to top left
-        if (rectPosY == 210 && rectPosX > 100 && rectPosX < 300 )
+        if (rectPosY == 250 && rectPosX > 100 && rectPosX < 300 )
         {
             rectPosY = 330;
         }
@@ -211,4 +211,3 @@ int main(int argc, char ** argv)
 
     }
 }
-
