@@ -92,12 +92,7 @@ int main(int argc, char ** argv)
         
         g.update();
         
-    
-        ifstream in;
-        in.open("mario.txt");
         
-
-
         
         
         
@@ -106,7 +101,7 @@ int main(int argc, char ** argv)
         //space for the bricks
         
         //1st row left
-        for (int col=0; col < width+330; ++col)
+        for (int col=0; col < width+300; ++col)
         {
             for (int row = 120; row < width+ 130; ++row)
             {
@@ -115,7 +110,7 @@ int main(int argc, char ** argv)
             
         }
         
-        for (int col=400; col < width+673; ++col)
+        for (int col=373; col < width+673; ++col)
         {
             for (int row = 120; row < width+ 130; ++row)
             {
@@ -131,7 +126,16 @@ int main(int argc, char ** argv)
         
         
         //top left (2nd row)
-        for (int col=100; col < width+430; ++col)
+        for (int col=0; col < width+80; ++col)
+        {
+            for (int row = 230; row < width+ 240; ++row)
+            {
+                g.plotPixel(col, row, 139, 69, 13);
+            }
+            
+        }
+        //2nd row middle
+        for (int col=200; col <width+473 ; ++col)
         {
             for (int row = 230; row < width+ 240; ++row)
             {
@@ -141,7 +145,7 @@ int main(int argc, char ** argv)
         }
         
         //top right (2nd row)
-        for (int col=500; col < width+600; ++col)
+        for (int col=593; col < width+673; ++col)
         {
             for (int row = 230; row < width+ 240; ++row)
             {
@@ -163,7 +167,7 @@ int main(int argc, char ** argv)
         }
         
         //bottom right
-        for (int col=450; col < width+673; ++col)
+        for (int col=373; col < width+673; ++col)
         {
             for (int row = 350; row < width + 360; ++row)
             {
@@ -178,59 +182,68 @@ int main(int argc, char ** argv)
         
         
         //limit to bottom left
-        if (rectPosY == 360 && rectPosX <= 305)
+        if (rectPosY == 360 && rectPosX <= 300)
         {
             rectPosY = 436;
         }
         
         //limit to bottom right
-        if (rectPosY == 360 && rectPosX >450 && rectPosX < 673)
+        if (rectPosY == 360 && rectPosX >= 3730 && rectPosX <= 673)
         {
             rectPosY = 436;
         }
-        
-        
         
         
         
         
     
         //bottom left
-        if (rectPosY == 340 && rectPosX < 300)
+        if (rectPosY == 340 && rectPosX <= 300 && rectPosX >=0)
         {
                 rectPosY = 339;
         }
         //bottom right
-        if (rectPosY == 340 && rectPosX >450 && rectPosX < 673)
+        if (rectPosY == 340 && rectPosX >373 && rectPosX < 673)
         {
             rectPosY = 339;
         }
+        
+        
         
         
         
         
         //top right (2nd row)
-        if (rectPosY == 220 && rectPosX < 600 && rectPosX > 495)
+        if (rectPosY == 220 && rectPosX <= 673 && rectPosX >= 563)
         {
                 rectPosY = 219;
         }
         //limit to top right (2nd row)
-        if (rectPosY == 250 && rectPosX <600 && rectPosX > 500)
+        if (rectPosY == 250 && rectPosX <= 673 && rectPosX >= 563)
         {
             rectPosY = 339;
         }
        
         
-        
+        //middle (2nd row)
+        if (rectPosY == 220 && rectPosX <= 473 && rectPosX >=200)
+        {
+            rectPosY = 219;
+        }
+        //limit middle(2nd row)
+        if (rectPosY == 250 && rectPosX <= 473 && rectPosX >= 500)
+        {
+            rectPosY = 339;
+        }
         
         
         //top left (2nd row)
-        if (rectPosY == 220 && rectPosX > 100 && rectPosX < 430)
+        if (rectPosY == 220 && rectPosX >=0 && rectPosX <= 80)
         {
             rectPosY = 219;
         }
         //limit to top left (2nd row)
-        if (rectPosY == 250 && rectPosX > 100 && rectPosX < 430 )
+        if (rectPosY == 250 && rectPosX >= 0 && rectPosX <= 80 )
         {
             rectPosY = 339;
         }
@@ -238,24 +251,24 @@ int main(int argc, char ** argv)
         
         
         //top left (1st row)
-        if (rectPosY == 110 && rectPosX > 0 && rectPosX < 330)
+        if (rectPosY == 110 && rectPosX >= 0 && rectPosX <= 300)
         {
             rectPosY = 109;
         }
         //limit to top left (1st row)
-        if (rectPosY == 120 && rectPosX > 0 && rectPosX < 330 )
+        if (rectPosY == 120 && rectPosX > 0 && rectPosX <= 300 )
         {
             rectPosY = 219;
         }
         
         
         //top right (1st row)
-        if (rectPosY == 110 && rectPosX > 400 && rectPosX < 673)
+        if (rectPosY == 110 && rectPosX >=373 && rectPosX <= 673)
         {
             rectPosY = 109;
         }
         //limit to top right (1st row)
-        if (rectPosY == 120 && rectPosX > 400 && rectPosX < 673)
+        if (rectPosY == 120 && rectPosX >=373 && rectPosX <= 673)
         {
             rectPosY = 219;
         }
@@ -269,4 +282,6 @@ int main(int argc, char ** argv)
         g.update();
 
     }
+
 }
+
