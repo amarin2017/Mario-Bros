@@ -100,7 +100,7 @@ int main(int argc, char ** argv)
         {
             for (int row = 200; row < width+ 200; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 139, 69, 13);
             }
             
         }
@@ -110,7 +110,7 @@ int main(int argc, char ** argv)
         {
             for (int row = 200; row < width+ 205; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 139, 69, 13);
             }
             
         }
@@ -122,7 +122,7 @@ int main(int argc, char ** argv)
         {
             for (int row = 350; row < width + 370; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 139, 69, 13);
             }
             
         }
@@ -132,7 +132,7 @@ int main(int argc, char ** argv)
         {
             for (int row = 350; row < width + 370; ++row)
             {
-                g.plotPixel(col, row, 255, 255, 255);
+                g.plotPixel(col, row, 139, 69, 13);
             }
             
         }
