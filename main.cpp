@@ -31,7 +31,7 @@ int main(int argc, char ** argv)
         //grab input
         if (g.getKey() == UP_ARROW) {
 
-            jump_time = 10.5;
+            jump_time = 11.0;
         }
 
         else if (g.getKey()== DOWN_ARROW)
